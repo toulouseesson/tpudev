@@ -143,4 +143,10 @@
       this.current = index || 0;
     };
   });
-
+  function envoi() {
+    swal(
+  'Envoie !',
+  'Votre commentaire à été envoyé avec succès !',
+  'success'
+)
+  }

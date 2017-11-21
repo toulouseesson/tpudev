@@ -5,12 +5,12 @@
     <meta charset="utf-8"/>
     <link rel="stylesheet" type="text/css" href="index.css"/>
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
-    <link rel="stylesheet" href="bower_components/sweetalert2/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="./node_modules/sweetalert2/dist/sweetalert2.min.css">
     <script type="text/javascript" src="angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <script type="text/javascript" src="valider.js"></script>
-    <script src="bower_components/sweetalert2/dist/sweetalert2.min.js"></script>
-    <script src="bower_components/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script src="./node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="./node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 	<!-- Include a polyfill for ES6 Promises (optional) for IE11 and Android browser -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
 	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
@@ -20,7 +20,7 @@
 <body class="list-group" ng-controller="StoreController as store">
     <header>
         <title>Game's Next</title>
-        <a href="index.html"><h1 class="text-center"><font size="8"><img class="logosite" src="images/logo site.png"/>      Game's Next      <img class="logosite" src="images/logo site.png"/></font></h1></a>
+        <a href="index.html" id="titre" ><h1 class="text-center"><font size="8"><img class="logosite" src="images/logo site.png"/>      Game's Next      <img class="logosite" src="images/logo site.png"/></font></h1></a>
         <h2 class="text-center"><font size="4">– Les derniers jeux vidéos à portée de clics ! –</font></h2>
         <ul class="nav nav-pills">
             
@@ -91,7 +91,7 @@
                 <input ng-model="reviewCtrl.review.author" type="email" name="email" class="form-control" placeholder="jimmyDean@example.org" title="Email"/>
             </fieldset>
             <fieldset class="form-group">
-                <input type="submit" class="btn btn-success pull-left" value="Envoyez" />
+                <input onclick="envoi();" type="submit" class="btn btn-success pull-left" value="Envoyez" />
             </fieldset>
         </form>
             </div>
