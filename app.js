@@ -161,3 +161,18 @@ function sweet() {
   animation: true
 })
 };
+function signout() {
+  swal({
+  title: 'Êtes vous sûr?',
+  text: "Vous êtes sur le point de vous déconnecter !",
+  type: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Oui je veux me déconnecter.'
+}).then(function (result) {
+  if (result.value) {
+      window.location = 'example.html';
+  }
+})
+};
