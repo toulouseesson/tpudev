@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
   <title>Validation de formulaires Bootstrap - Sandbox iframe</title>
+      <link rel="stylesheet" href="./node_modules/sweetalert2/dist/sweetalert2.min.css">
     <!-- HTML5 Boilerplate CSS -->
     <link rel="stylesheet" href="./page_connexion/css/normalize.css">
     <link rel="stylesheet" href="./page_connexion/css/main.css">
@@ -18,7 +19,7 @@
   <body>
     <header>
       <title>Game's Next</title>
-        <a href="index.html" id="titre" ><h1 class="text-center"><font size="8"><img class="logosite" src="images/logo site.png"/>      Game's Next      <img class="logosite" src="images/logo site.png"/></font></h1></a>
+        <a href="example.html" id="titre" ><h1 class="text-center"><font size="8"><img class="logosite" src="images/logo site.png"/>      Game's Next      <img class="logosite" src="images/logo site.png"/></font></h1></a>
         <h2 class="text-center"><font size="4">– Les derniers jeux vidéos à portée de clics ! –</font></h2>
         <ul class="nav nav-pills">
             
@@ -53,7 +54,7 @@
           <label for="login-password">Mot de passe</label>
           <input type="password" class="form-control" id="login-password" placeholder="Mot de passe">
         </div>
-        <button type="submit" class="btn btn-primary">Connexion</button>
+        <button onclick="test();" class="btn btn-primary">Connexion</button>
       </form>
     </div>
   </div>
@@ -96,6 +97,12 @@
     <!-- Example's JS -->
     <script src="./page_connexion/js/script.js"></script>
     <script src="./page_connexion/js/alert-box.js"></script>
+        <script src="./node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="./node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+  <!-- Include a polyfill for ES6 Promises (optional) for IE11 and Android browser -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
 
   </body>
 </html>

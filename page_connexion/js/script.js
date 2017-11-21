@@ -185,3 +185,18 @@ $('#register-password')
 
   
 });
+function test() {
+  swal({
+  title: 'Succès !',
+  text: 'Connexion en cours...',
+  timer: 3000,
+  onOpen: function () {
+    swal.showLoading()
+  }
+}).then(function (result) {
+  if (result.dismiss === 'timer') {
+    console.log('I was closed by the timer');
+    window.location= 'index.html'
+  }
+})
+};
