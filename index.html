@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html ng-app="Store">
+
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="css/sweetalert2.css"/>
+    <link rel="stylesheet" type="text/css" href="index.css"/>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <script type="text/javascript" src="js/sweetalert2"></script>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="valider.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-2.2.4.js"
+    integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="list-group" ng-controller="StoreController as store">
+    <header>
+        <title>Game's Next</title>
+        <a href="index.html"><h1 class="text-center"><font size="8"><img class="logosite" src="images/logo site.png"/>      Game's Next      <img class="logosite" src="images/logo site.png"/></font></h1></a>
+        <h2 class="text-center"><font size="4">– Les derniers jeux vidéos à portée de clics ! –</font></h2>
+        <ul class="nav nav-pills">
+            
+        </ul>
+    </header>
+    <div class="list-group-item" ng-repeat="product in store.products">
+        <h3>
+            {{product.name}}
+        </h3>
+        <section class="tab" ng-controller="TabController as tab">
+            <ul class="nav nav-pills">
+                <li ng-class="{ active: tab.isSet(1) }">
+                    <a href ng-click="tab.setTab(1)">Description</a></li>
+                <li ng-class="{ active: tab.isSet(2) }">
+                    <a href ng-click="tab.setTab(2)">Notes</a></li>
+                <li ng-class="{ active: tab.isSet(3) }">
+                    <a href ng-click="tab.setTab(3)">Avis</a></li>
+                <li ng-class="{ active: tab.isSet(4) }">
+                    <a href ng-click="tab.setTab(4)">Achat</a></li>
+            </ul>
+            <div ng-show="tab.isSet(1)">
+                <h4>Description</h4>
+                                    <!-- Image gallerie -->
+    <div class="gallery" ng-controller="GalleryController as gallery" ng-show="product.images.length">
+        <img ng-src="{{product.image[gallery.current]}}" />
+        <ul class="clearfix">
+            <li class="small-image img-thumbnail" ng-repeat="image in product.images track by $index" ng-click="gallery.setCurrent($index)">
+                <img style="width:50px; height: 50px" ng-src="{{image}}" />
+            </li>
+              <img class="img img-square img-thumbnail" ng-src="{{product.images[gallery.current]}}" />
+        </ul>
+    </div>
+                <blockquote><i><font size="4" face="Times Roman">"{{product.description}}"</font></i></blockquote>
+            </div>
+            <div ng-show="tab.isSet(2)">
+                <h4>Les notes de la rédaction</h4>
+                <blockquote>Site: <img id="site" src="{{product.site}}"/></br>
+                            Avis: <blockquote><font face="Times New Roman"><i><b><u>"{{product.avis}}"</u></b></i></font></blockquote></br>
+                            Note: <img id="note" src="{{product.note}}"/></br><br/>
+                            Lien: <a href="{{product.lien}}" target="_blank"><font size="3">Cliquez ici pour lire l'avis complet de la rédac!</font></a></blockquote><br/>
+                <blockquote>Site: <img id="site" src="{{product.site2}}"/></br></br>
+                            Avis: <blockquote><font face="Times New Roman"><i><b><u>"{{product.avis2}}"</u></b></i></font></blockquote></br>
+                            Note: <img id="note" src="{{product.note2}}"/></br><br/>
+                            Lien: <a href="{{product.lien2}}" target="_blank"><font size="3">Cliquez ici pour lire l'avis complet de la rédac!</font></a></blockquote>
+            </div>
+            <div class"panel" ng-show="tab.isSet(3)">
+                <h4>Avis</h4>
+                <div ng-repeat="review in product.reviews">
+                     <blockquote>
+                <strong>{{review.stars}}/5</strong><br/>
+                    "{{review.body}}"<br/>
+                <cite class="clearfix">-{{review.author}}</cite>
+            </blockquote>
+                </div>
+                  <!-- Review Form -->
+        <form name="formulaire" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(product)" novalidate onsubmit="valider();">
+            <!-- Review Form -->
+            <h4>Envoyez un commentaire</h4>
+            <fieldset class="form-group">
+                <select class="form-control" name="note" ng-options="stars for stars in [5,4,3,2,1]" title="Notez" ng-model="reviewCtrl.review.stars">
+                    <option value="">Notez le produit</option>
+                </select>
+            </fieldset>
+            <fieldset class="form-group">
+                <textarea ng-model="reviewCtrl.review.body" class="form-control" name="texte" placeholder="Écrivez un commentaire..." title="Review"></textarea>
+            </fieldset>
+            <fieldset class="form-group">
+                <input ng-model="reviewCtrl.review.author" type="email" name="email" class="form-control" placeholder="jimmyDean@example.org" title="Email"/>
+            </fieldset>
+            <fieldset class="form-group">
+                <input type="submit" class="btn btn-success pull-left" value="Envoyez" />
+            </fieldset>
+        </form>
+            </div>
+            <div class ="panel" ng-show="tab.isSet(4)">
+                <h4>Acheter le jeu sur PS4/XBOX ONE/PC :</h4>
+                <blockquote>PC:</br>
+                                <a class="btn btn-success" href="{{product.bouton}}" target="_blank">PC</a>
+                                <em class="pull-right">{{product.price | currency :'€'}}</em><br/>
+                            PS4:</br>
+                                <a class="btn btn-success" href="{{product.bouton2}}" target="_blank">PS4</a>
+                                <em class="pull-right">{{product.price2 | currency :'€'}}</em><br/>
+                            XBOX ONE:</br>
+                                <a class="btn btn-success" href="{{product.bouton3}}" target="_blank">XBOX ONE</a>
+                                <em class="pull-right">{{product.price3 | currency :'€'}}</em>
+                </blockquote>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
