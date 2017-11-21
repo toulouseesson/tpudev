@@ -50,7 +50,7 @@
             <li class="small-image img-thumbnail" ng-repeat="image in product.images track by $index" ng-click="gallery.setCurrent($index)">
                 <img style="width:50px; height: 50px" ng-src="{{image}}" />
             </li>
-              <img class="img img-square img-thumbnail" ng-src="{{product.images[gallery.current]}}" />
+              <img onclick="sweet();" class="img img-square img-thumbnail" ng-src="{{product.images[gallery.current]}}" />
         </ul>
     </div>
                 <blockquote><i><font size="4" face="Times Roman">"{{product.description}}"</font></i></blockquote>
