@@ -143,3 +143,4 @@
       this.current = index || 0;
     };
   });
+
