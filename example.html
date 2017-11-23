@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>Game's Next</title>
+      <link rel="stylesheet" href="./node_modules/sweetalert2/dist/sweetalert2.min.css">
+    <!-- HTML5 Boilerplate CSS -->
+    <link rel="stylesheet" href="./page_connexion/css/normalize.css">
+    <link rel="stylesheet" href="./page_connexion/css/main.css">
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="./page_connexion/css/bootstrap.min.css">
+    <!-- Example's CSS -->
+    <link rel="stylesheet" href="./page_connexion/css/styles.css">
+    <style type="text/css" media="screen">
+    body {
+        font-family: Arial, Helvetica;
+    }
+    </style>
+  </head>
+  <body>
+    <header>
+      <title>Game's Next</title>
+        <a href="example.html" id="titre" ><h1 class="text-center"><font size="8"><img class="logosite" src="images/logo site.png"/>      Game's Next      <img class="logosite" src="images/logo site.png"/></font></h1></a>
+        <h2 class="text-center"><font size="4">– Les derniers jeux vidéos à portée de clics ! –</font></h2>
+        <ul class="nav nav-pills">
+            
+        </ul>
+    </header>
+
+    <div class="container">
+        <ul id="onglets" class="nav nav-tabs">
+    <li>
+        <a class="nav-link active" data-tab-id="tab-login" id="onglet1" class="active" href="#">Connexion</a>
+    </li>
+    <li class="tab-nav">
+        <a class="nav-link" data-tab-id="tab-register" id="onglet2" href="#">Inscription</a>
+    </li>
+
+</ul>
+
+<div id="alert-box" class="alert alert-danger collapse" role="alert">
+  
+</div>
+
+<div class="tab" id="tab-login">
+  <div class="card">
+    <div class="card-body">
+      <form id="form-login">
+        <div class="form-group">
+          <label for="login-identifier">Identifiant ou e-mail</label>
+          <input type="text" class="form-control" id="login-identifier" aria-describedby="identifierHelp" placeholder="Entrez votre identifiant ou e-mail">
+          <small class="text-danger collapse"></small>
+        </div>
+        <div class="form-group">
+          <label for="login-password">Mot de passe</label>
+          <input type="password" class="form-control" id="login-password" placeholder="Mot de passe">
+        </div>
+        <button onclick="test();" class="btn btn-primary">Connexion</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="tab" id="tab-register" style="display:none">
+  <div class="card">
+    <div class="card-body">
+      <form id="form-register">
+        <div class="form-group">
+          <label for="register-username">Identifiant</label>
+          <input type="text" class="form-control" id="register-username" aria-describedby="usernameHelp" placeholder="Entrez un identifiant (lettres, chiffres, _)" />
+          <small class="text-danger collapse"></small>
+        </div>
+        <div class="form-group">
+          <label for="register-email">Adresse e-mail</label>
+          <input type="email" class="form-control" id="register-email" aria-describedby="emailHelp" placeholder="Entrez un e-mail">
+          <small class="text-danger collapse"></small>
+        </div>
+        <div class="form-group">
+          <label for="register-password">Mot de passe</label>
+          <input type="password" class="form-control" id="register-password" placeholder="Mot de passe (4 caractères min.)">
+          <small class="text-danger collapse"></small>
+        </div>
+  
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+    </div>
+
+    <!-- HTML5 Boilerplate JS -->
+    <script src="./page_connexion/js/modernizr-3.5.0.min.js"></script>
+    <script src="./page_connexion/js/plugins.js"></script>
+    <!-- Vendor JS -->
+    <script src="./page_connexion/js/jquery-3.2.1.min.js" ></script>
+    <!-- Example's JS -->
+    <script src="./page_connexion/js/script.js"></script>
+    <script src="./page_connexion/js/alert-box.js"></script>
+        <script src="./node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="./node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+  <!-- Include a polyfill for ES6 Promises (optional) for IE11 and Android browser -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+
+  </body>
+</html>
