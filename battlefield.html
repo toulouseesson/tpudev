@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html ng-app="Store">
+
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="index.css"/>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" href="./node_modules/sweetalert2/dist/sweetalert2.min.css">
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="valider.js"></script>
+    <script src="./node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="./node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+	<!-- Include a polyfill for ES6 Promises (optional) for IE11 and Android browser -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  	crossorigin="anonymous"></script>
+</head>
+
+<body class="list-group" ng-controller="StoreController as store">
+    <header>
+        <title>Game's Next</title>
+        <a href="index.html" id="titre" ><h1 class="text-center"><font size="8"><img class="logosite" src="images/logo site.png"/>      Game's Next      <img class="logosite" src="images/logo site.png"/></font></h1></a>
+        <h2 class="text-center"><font size="4">– Les derniers jeux vidéos à portée de clics ! –</font></h2>
+        <ul class="nav nav-pills">
+            
+        </ul>
+        <div id="Menu">
+        	<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" id="signout" onclick="signout();">Deconnexion</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li class="active"><a href="#1">Battlefield 1 <span class="sr-only">(current)</span></a></li>
+        <li><a href="#2">Call Of Duty</a></li>
+        <li class="active"><a href="#3">Rainbow Six Siege <span class="sr-only">(current)</span></a></li>
+      </ul>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <form class="navbar-form navbar-right">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Rechercher</button>
+      </form>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+        </div>
+    </header>
+    <div class="list-group-item">
+        <h3>
+            Battlefield
+        </h3>
+        <section class="tab" ng-controller="TabController as tab">
+            <ul class="nav nav-pills">
+                <li ng-class="{ active: tab.isSet(1) }">
+                    <a href ng-click="tab.setTab(1)">Description</a></li>
+                <li ng-class="{ active: tab.isSet(2) }">
+                    <a href ng-click="tab.setTab(2)">Notes</a></li>
+                <li ng-class="{ active: tab.isSet(3) }">
+                    <a href ng-click="tab.setTab(3)">Achat</a></li>
+            </ul>
+            <div ng-show="tab.isSet(1)">
+                <h4>Description</h4>
+                                    <!-- Image gallerie -->
+    <div class="gallery">
+        <img ng-src="images/bf1.jpg" />
+    </div>
+                <blockquote><i><font size="4" face="Times Roman">"Dans Battlefield 1, vous découvrirez ce que nous appelons des récits de guerre. Ce sont des aventures personnelles axées sur différents protagonistes, chacun ayant son histoire et ses compétences uniques. Ces personnages participent à la guerre, mais les histoires racontées dans Battlefield 1 sont personnelles. Elles se concentrent plus sur les gens que sur l'histoire des batailles."</font></i></blockquote>
+            </div>
+            <div ng-show="tab.isSet(2)">
+                <h4>Les notes de la rédaction</h4>
+                <blockquote>Site: <img id="site" src="images/gamekult.gif"/></br>
+                            Avis: <blockquote><font face="Times New Roman"><i><b><u>"Cet épisode est - sans l’ombre d’un doute - le meilleur de la série"</u></b></i></font></blockquote></br>
+                            Note: <img id="note" src="images/9.png"/></br><br/>
+                            Lien: <a href="https://www.gamekult.com/jeux/battlefield-1-3050692319/test.html" target="_blank"><font size="3">Cliquez ici pour lire l'avis complet de la rédac!</font></a></blockquote><br/>
+                <blockquote>Site: <img id="site" src="images/logojvc.jpg"/></br></br>
+                            Avis: <blockquote><font face="Times New Roman"><i><b><u>"Un FPS solo et multi venu gommer les errances de la saga iconique"</u></b></i></font></blockquote></br>
+                            Note: <img id="note" src="images/8,5.png"/></br><br/>
+                            Lien: <a href="http://www.jeuxvideo.com/test/552927/battlefield-1-la-pepite-des-fps-de-fin-d-annee.htm" target="_blank"><font size="3">Cliquez ici pour lire l'avis complet de la rédac!</font></a></blockquote>
+            </div>
+            <div class ="panel" ng-show="tab.isSet(3)">
+                <h4>Acheter le jeu sur PS4/XBOX ONE/PC :</h4>
+                <blockquote>PC:</br>
+                                <a class="btn btn-success" href="https://jeux-video.fnac.com/a9689299/Battlefield-1-PC-Jeu-PC?ectrans=1&oref=9a4574b9-8158-cfe4-5737-06655a362de0" target="_blank">PC</a>
+                                <em class="pull-right">55€</em><br/>
+                            PS4:</br>
+                                <a class="btn btn-success" href="https://jeux-video.fnac.com/a9689297/Battlefield-1-PS4-Jeu-PlayStation-4?ectrans=1&oref=e8eb1f12-c0f1-e64b-9aa4-76d86a76af1d" target="_blank">PS4</a>
+                                <em class="pull-right">35€</em><br/>
+                            XBOX ONE:</br>
+                                <a class="btn btn-success" href="https://jeux-video.fnac.com/a9689298/Battlefield-1-Xbox-One-Jeu-Xbox-One?ectrans=1&oref=35b1e1ac-5491-3af3-e1d0-0196cfeec058" target="_blank">XBOX ONE</a>
+                                <em class="pull-right">30€</em>
+                </blockquote>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
