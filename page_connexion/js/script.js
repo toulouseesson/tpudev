@@ -185,7 +185,7 @@ $('#register-password')
 
   
 });
-function test() {
+function connect() {
   swal({
   title: 'Succès !',
   text: 'Connexion en cours...',
@@ -200,3 +200,18 @@ function test() {
   }
 })
 };
+
+function inscription() {
+  $.ajax({
+            url: 'http://localhost/tpudev/inscription.php',
+            method: 'post',
+            data: 'serialize',
+            dataType: 'json', // pour le renvoie de donnée PHP serveur => client JS
+            success: function success() { // si coté serveur PHP y'a pas d'erreur (ex: erreur 502)
+                // tu fais ce que tu veux, ex : une redirection
+                alert("Inscription réussi");
+            }
+        });
+}
+
+

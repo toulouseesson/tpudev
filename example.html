@@ -54,7 +54,7 @@
           <label for="login-password">Mot de passe</label>
           <input type="password" class="form-control" id="login-password" placeholder="Mot de passe">
         </div>
-        <button onclick="test();" class="btn btn-primary">Connexion</button>
+        <button onclick="connect();" class="btn btn-primary">Connexion</button>
       </form>
     </div>
   </div>
@@ -63,7 +63,7 @@
 <div class="tab" id="tab-register" style="display:none">
   <div class="card">
     <div class="card-body">
-      <form id="form-register">
+      <form id="form-register" method="post">
         <div class="form-group">
           <label for="register-username">Identifiant</label>
           <input type="text" class="form-control" id="register-username" aria-describedby="usernameHelp" placeholder="Entrez un identifiant (lettres, chiffres, _)" />
@@ -80,7 +80,7 @@
           <small class="text-danger collapse"></small>
         </div>
   
-        <button type="submit" class="btn btn-primary">Envoyer</button>
+        <button type="submit" onclick="inscription();" method="post" class="btn btn-primary">Envoyer</button>
       </form>
     </div>
   </div>
