@@ -172,7 +172,7 @@ function signout() {
   confirmButtonText: 'Oui je veux me déconnecter.'
 }).then(function (result) {
   if (result.value) {
-      window.location = 'example.html';
+      window.location = 'example.php';
   }
 })
 };
