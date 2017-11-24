@@ -289,3 +289,7 @@ textarea {
         page-break-after: avoid;
     }
 }
+
+#signin {
+    color: white;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="animate.css" />
+    <link rel="stylesheet" type="text/css" href="contact.css" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="index.css"/>
+    <link rel="stylesheet" href="./node_modules/sweetalert2/dist/sweetalert2.min.css">
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="valider.js"></script>
+    <script src="./node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="./node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+  <!-- Include a polyfill for ES6 Promises (optional) for IE11 and Android browser -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+  <meta charset="utf-8">
+  <title>Contact</title>
+</head>
+<body>
+
+ <header>
+        <title>Game's Next</title>
+        <a href="index.html" id="titre" ><h1 class="text-center"><font size="8"><img class="logosite" src="images/logo site.png"/>      Game's Next      <img class="logosite" src="images/logo site.png"/></font></h1></a>
+        <h2 class="text-center"><font size="4">– Les derniers jeux vidéos à portée de clics ! –</font></h2>
+        <ul class="nav nav-pills">
+            
+        </ul>
+        <div id="Menu">
+          <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" id="signout" onclick="signout();">Deconnexion</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">Acceuil <span class="sr-only">(current)</span></a></li>
+        <li><a href="battlefield.html">Battlefield 1 <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="CallOfDuty.html">Call Of Duty</a></li>
+        <li><a href="Rainbowsix.html">Rainbow Six Siege <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="maps.html">Magasins</a></li>
+        <li><a href="contact.html">Contact <span class="sr-only">(current)</span></a></li>
+      </ul>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <form class="navbar-form navbar-right">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Rechercher</button>
+      </form>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+        </div>
+    </header>
+
+<style>
+ .title {
+    font-family: Lobster, Monospace;
+  }
+</style> 
+
+<p>
+    <h1 id="toto" class="title">Nous Contacter</h1>
+</p>
+<form method="post">
+  <div>
+    <label for="name">Nom:</label>
+    <input type="text" id="name" name="user_name">
+  </div>
+
+  <div>
+    <label for="mail">E-mail:</label>
+    <input type="email" id="mail" name="user_email">
+  </div>
+
+  <div>
+    <label for="msg">Message:</label>
+    <textarea id="msg" name="user_message"></textarea>
+  </div>
+ 
+  <div class="button">
+    <a onclick="damien();" type="submit" class="btn btn-success">Envoyer votre message</a>
+  </div>
+</form>
+</body>
+</html>

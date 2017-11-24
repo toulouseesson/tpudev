@@ -4,29 +4,6 @@ $(document).ready(function() {
   // https://stackoverflow.com/questions/16284724/what-does-var-app-app-do
   window.MyApp = window.MyApp || {};
 
-  function markInputAsValid( input ) {
-    // Utiliser les classes Bootstrap .is-valid et .is-invalid
-    input
-    .addClass('is-valid')
-    .removeClass('is-invalid');
-    // On va se servir de l'id pour le sélecteur suivant
-    // (balise small adjacente au champ input)
-    var inputId = input.attr( 'id' );
-    $( '#' + inputId + ' + small' )
-    .removeClass( 'show' );
-  }
-
-  function markInputAsInvalid( input, message ) {
-    input
-    .addClass('is-invalid')
-    .removeClass('is-valid');
-    var inputId = input.attr( 'id' );
-    console.log( inputId, $( '#' + inputId + ' + small' ), message );
-    $( '#' + inputId + ' + small' )
-    .addClass( 'show' )
-    .html( message );
-  }
-
   // Paramètres pour les envois par AJAX
   $.ajaxSetup({
       headers: {
@@ -200,18 +177,17 @@ function connect() {
   }
 })
 };
-
 function inscription() {
-  $.ajax({
-            url: 'http://localhost/tpudev/inscription.php',
-            method: 'post',
-            data: 'serialize',
-            dataType: 'json', // pour le renvoie de donnée PHP serveur => client JS
-            success: function success() { // si coté serveur PHP y'a pas d'erreur (ex: erreur 502)
-                // tu fais ce que tu veux, ex : une redirection
-                alert("Inscription réussi");
-            }
-        });
-}
+  swal(
+    'Bienvenue!',
+    'Inscription réussie !',
+    'success'
+    ).then(function (result) {
+      if (result.value) {
+        window.location= "example.html"
+      }
+    })
+};
+
 
 

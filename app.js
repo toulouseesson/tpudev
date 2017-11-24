@@ -150,17 +150,6 @@
   'success'
 )
   };
-function sweet() {
-  swal({
-  title: 'Sweet!',
-  text: 'Modal with a custom image.',
-  imageUrl: 'https://unsplash.it/400/200',
-  imageWidth: 400,
-  imageHeight: 200,
-  imageAlt: 'Custom image',
-  animation: true
-})
-};
 function signout() {
   swal({
   title: 'Êtes vous sûr?',
@@ -176,3 +165,24 @@ function signout() {
   }
 })
 };
+function damien() {
+    swal({
+  title: 'Envoie',
+  text: 'Envoie du message en cours...',
+  timer: 3000,
+  onOpen: function () {
+    swal.showLoading()
+  }
+}).then(function (result) {
+  if (result.dismiss === 'timer') {
+    swal(
+      'Success!',
+      'message envoyé!',
+      'success'
+      ).then(function (result) {
+        if (result.value){
+    window.location= 'index.html'
+  }})
+  }
+})
+}
