@@ -3,6 +3,9 @@
 
 <head>
     <meta charset="utf-8"/>
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="index.css"/>
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" href="./node_modules/sweetalert2/dist/sweetalert2.min.css">
@@ -15,6 +18,17 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
 	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
   	crossorigin="anonymous"></script>
+    <style type="text/css">
+                h1 {
+           font-family: Lobster, Monospace;
+        }
+        h3{
+            font-family: Signika, Monospace;
+        }
+        #desc{
+            font-family: 'Dancing Script', cursive;
+        }
+    </style>
 </head>
 
 <body class="list-group" ng-controller="StoreController as store">
@@ -76,7 +90,7 @@
               <img class="img img-square img-thumbnail" ng-src="{{product.images[gallery.current]}}" />
         </ul>
     </div>
-                <blockquote><i><font size="4" face="Times Roman">"{{product.description}}"</font></i></blockquote>
+                <blockquote id="desc"><i><font size="4" face="Times Roman">"{{product.description}}"</font></i></blockquote>
             </div>
             <div ng-show="tab.isSet(2)">
                 <h4>Les notes de la rédaction</h4>
